@@ -8,13 +8,11 @@ on:
 
 jobs:
 
-  build-and-push:
+  build:
 
     runs-on: ubuntu-latest
 
     steps:
     - uses: actions/checkout@v4
-    - name: Build and Push the Docker image
-      run: 
-        docker build . --file Dockerfile --tag pmghetto/ml-project:latest && 
-        docker push pmghetto/ml-project:latest
+    - name: Build the Docker image
+      run: docker build . --file Dockerfile --tag ml-project:$(date +%s)
