@@ -16,5 +16,5 @@ jobs:
     - uses: actions/checkout@v4
     - name: Build and Push the Docker image
       run: 
-        docker build . --file Dockerfile --tag pmghetto/ml-project:$(date +%s) && 
-        docker push pmghetto/ml-project
+        docker build . --file Dockerfile --tag pmghetto/ml-project:latest && 
+        docker push pmghetto/ml-project:latest
